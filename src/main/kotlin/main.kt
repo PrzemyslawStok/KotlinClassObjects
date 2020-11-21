@@ -9,34 +9,11 @@ open class transport{
     }
 }
 
-class Teacher(val name: String, val surname: String):drinking,transport(){
-    override fun tea() {
-        println("Pije podwójną herbatę")
-    }
-
-    override fun coffee() {
-        println("Pije małą kawę")
-    }
-
-    override fun getTicket() {
-        println("Bilet dla nauczyciela...")
-        super.getTicket()
-    }
-}
-
-class Student(val name: String, val surname: String):drinking{
-    override fun tea() {
-        println("Zamawia małą harbatę")
-    }
-
-    override fun coffee() {
-        println("Pije dużą kawę")
-    }
-
-}
-
 fun main() {
     val toDrink = mutableListOf<drinking>()
+    val transportWsiz = mutableListOf<transport>()
+
+    addTransports(transportWsiz)
 
 
     for(i in 1..5){
@@ -45,10 +22,11 @@ fun main() {
     }
 
     toDrink.forEach{it.tea()}
-
-    addTransports()
 }
 
-fun addTransports(transport: List<transport>){
-
+fun addTransports(transport: MutableList<transport>){
+    for(i in 1..5){
+        transport.add(Teacher("Przemysław","Stokłosa_${i}"))
+        transport.add(transport())
+    }
 }
