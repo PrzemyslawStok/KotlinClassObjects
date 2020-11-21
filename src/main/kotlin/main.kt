@@ -5,7 +5,7 @@ interface drinking{
 
 open class transport{
     open fun getTicket(){
-        println("Ticket to WSIZ")
+        println("Bilet na uczelnię...")
     }
 }
 
@@ -19,9 +19,9 @@ class Teacher(val name: String, val surname: String):drinking,transport(){
     }
 
     override fun getTicket() {
+        println("Bilet dla nauczyciela...")
         super.getTicket()
     }
-
 }
 
 class Student(val name: String, val surname: String):drinking{
