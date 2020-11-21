@@ -3,7 +3,7 @@ interface drinking{
     fun coffee()
 }
 
-class Tacher(val name: String, val surname: String):drinking{
+class Teacher(val name: String, val surname: String):drinking{
     override fun tea() {
         println("Pije podwójną herbatę")
     }
@@ -25,6 +25,13 @@ class Student(val name: String, val surname: String):drinking{
 
 }
 
-fun main(args: Array<String>) {
+fun main() {
+    val toDrink = mutableListOf<drinking>()
 
+    for(i in 1..5){
+        toDrink.add(Student("Przemysław${i}","Stokłosa${i}"))
+        toDrink.add(Teacher("Piotr${i}","Stokłosa${i}"))
+    }
+
+    toDrink.forEach{it.tea()}
 }
